@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ruleset name="SelecaoGlobo Coding Standard">
+    <description>SelecaoGlobo Coding Standard</description>
+
+    <!-- display progress -->
+    <arg name="colors"/>
+
+    <!-- inherit rates from: -->
+    <rule ref="PSR2"/>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+        <properties>
+            <property name="ignoreBlankLines" id="false"/>
+        </properties>
+    </rule>
+
+    <!-- Paths to check -->
+    <file>config</file>
+    <file>src</file>
+    <file>templates</file>
+    <file>test</file>
+
+    <!-- Exclude patterns -->
+    <exclude-pattern>config/routes.php</exclude-pattern>
+    <exclude-pattern>test/datasources</exclude-pattern>
+    <exclude-pattern>test/Bootstrap.php</exclude-pattern>
+</ruleset>

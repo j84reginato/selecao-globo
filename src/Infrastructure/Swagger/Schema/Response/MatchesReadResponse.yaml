@@ -1,0 +1,16 @@
+components:
+  schemas:
+    MatchesReadResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Describe if the request occurs sucessfully or not
+          example: true
+        message:
+          type: string
+          description: Information about the transaction
+          example: The soccer matches of day has been successfully gathered.
+        data:
+          type: object
+          $ref: "#/components/schemas/MatchesRead"

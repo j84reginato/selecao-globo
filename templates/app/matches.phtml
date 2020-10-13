@@ -1,0 +1,66 @@
+<?php $this->layout('layout::default', ['title' => 'Padrão Básico de Codificação']) ?>
+
+<?php $this->push('stylesheets') ?>
+<link type="text/css" rel="stylesheet" href="/assets/app/style.css" media="all">
+<link type="text/css" rel="stylesheet" href="/assets/plugin/form/datetime/jquery-datetimepicker/jquery.datetimepicker.css" media="all">
+<?php $this->end() ?>
+
+<?php $this->push('javascript') ?>
+<script type="text/javascript" src="/assets/plugin/form/datetime/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="/assets/plugin//ui/moment/moment.min.js"></script>
+<script type="text/javascript" src="/assets/plugin/ui/moment/locale/pt-br.js"></script>
+<script type="text/javascript" src="/assets/app/helpers.js"></script>
+<script type="text/javascript" src="/assets/pages/matches.js"></script>
+<script type="text/javascript" src="/assets/pages/matches-endpoints.js"></script>
+<script>
+    const PARAM_AJAX_HEADERS = {
+        "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb25hdGFuIE5vcm9uaGEgUmVnaW5hdG8iLCJleHAiOm51bGwsInN1YiI6IlNlbGVjYW9HbG9ibyIsImF1ZCI6Imdsb2JvLmNvbSIsImlhdCI6MTYwMTU5NTU4NH0.fOEYqku2p3iDuNyrqB_-xVkdrx3P8u_Kv96cAyR0YMI",
+    };
+</script>
+<?php $this->end() ?>
+
+<a href="#top" class="text-muted back-to-top"><em class="fa fa-toggle-up"></em>&nbsp;Back to top</a>
+<div class="content">
+    <div itemtype="http://schema.org/SoftwareSourceCode">
+        <main>
+            <div class="px-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <?= $this->insert('app::nav') ?>
+                        <div class="repository-content content">
+                            <div class="Box Box--condensed">
+                                <div class="Box-body p-5">
+                                    <article class="markdown-body container-lg" itemprop="text">
+                                        <h1>
+                                            <a id="coding-standards" class="anchor" aria-hidden="true" href="#coding-standards">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Agenda de Jogos
+                                        </h1>
+                                    </article>
+                                    <div id="root-agenda-esportiva">
+                                        <div class="cjjvyo">
+                                            <div class="gzBRfu">
+                                                <form id="form-matches">
+                                                    <div class="input-group offset-lg-4 col-lg-4" style="width: 270px;">
+                                                        <input id="match-date" class="form-control" name="matchDate" required="required" autocomplete="off">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><em class="fa fa-calendar"></em></span>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div id="matches"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

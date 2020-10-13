@@ -1,0 +1,126 @@
+components:
+  schemas:
+    MatchesRead:
+      type: object
+      properties:
+        Campeonato Brasileiro:
+          type: array
+          items:
+            type: object
+            properties:
+              jogo_id:
+                description: ID da jogo
+                type: integer
+                format: int32
+                example: 232484
+              data_hora_realizacao:
+                description: Data e hora da realização do jogo
+                type: object
+                properties:
+                  date:
+                    type: string
+                    format: date-time
+                  timezone_type:
+                    type: integer
+                  timezone:
+                    type: string
+                example:
+                  date: '2019-12-01 19:00:00.000000'
+                  timezone_type: 3
+                  timezone: Etc/GMT+3
+              equipe_mandante:
+                description: Equipe mandante do jogo
+                type: object
+                example:
+                  equipe_id: 284
+                  nome: Grêmio Foot-Ball Porto-Alegrense
+                  nome_popular: Grêmio
+                  slug: gremio
+                  sigla: GRE
+                  apelido: Grêmio
+                  escudos:
+                    60x60: https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/gremio_60x60.png
+                    30x30: https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/gremio_30x30.png
+                    svg: https://s.glbimg.com/es/sde/f/organizacoes/2018/03/12/gremio.svg
+                    45x45: https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/gremio_45x45.png
+                  cores:
+                    terciaria: '#000000'
+                    secundaria: '#000000'
+                    primaria: '#0099cc'
+                  genero: M
+              equipe_visitante:
+                description: Equipe mandante do jogo
+                type: object
+                example:
+                  equipe_id: 276
+                  nome: São Paulo Futebol Clube
+                  nome_popular: São Paulo
+                  slug: sao-paulo
+                  sigla: SAO
+                  apelido: São Paulo
+                  escudos:
+                    60x60: https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/sao_paulo_60x60.png
+                    30x30: https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/sao_paulo_30x30.png
+                    svg: https://s.glbimg.com/es/sde/f/organizacoes/2018/03/11/sao-paulo.svg
+                    45x45: https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/sao_paulo_45x45.png
+                  cores:
+                    terciaria: "#ffffff"
+                    secundaria: '#000000'
+                    primaria: '#dd0000'
+                  genero: M
+              campeonato: Campeonato Brasileiro
+              edicao: Campeonato Brasileiro 2019
+              fase:
+                fase_id: 5896
+                nome: Fase única
+                slug: fase-unica-seriea-2019
+                data_inicio:
+                  date: 2019-04-27 00:00:00.000000
+                  timezone_type: 3
+                  timezone: Etc/GMT+3
+                data_fim:
+                  date: 2019-12-08 00:00:00.000000
+                  timezone_type: 3
+                  timezone: Etc/GMT+3
+                atual: true
+                ordem: 1
+                disclaimer:
+                tipo:
+                  tipo_id: 1
+                  descricao: Pontos Corridos
+                formato:
+                  descricao: Um jogo
+                  formato_id: 0
+                edicao:
+                  edicao_id: 2757
+                  nome: Campeonato Brasileiro 2019
+                  slug: campeonato-brasileiro-2019
+                  slug_editorial: 2019
+                  campeonato:
+                    campeonato_id: 26
+                    nome: Campeonato Brasileiro
+                    slug: campeonato-brasileiro
+                    genero: M
+              rodada: 36
+              vencedor_jogo:
+                equipe_id: 284
+                label: mandante
+              placar_oficial_mandante: 3
+              placar_oficial_visitante: 0
+              placar_penaltis_mandante: 0
+              placar_penaltis_visitante: 0
+              decisivo: false
+              suspenso: false
+              cancelado: false
+              wo: false
+              sede:
+                sede_id: 2463
+                nome: Arena do Grêmio
+                nome_popular: Arena do Grêmio
+                tipo:
+                  tipo_id: 1
+                  descricao: Arena Desportiva
+              escalacao_mandante:
+                escalacao_id: 0
+              escalacao_visitante:
+                escalacao_id: 0

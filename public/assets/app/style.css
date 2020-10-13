@@ -1,0 +1,219 @@
+.gzBRfu {
+    max-width: 1224px;
+    margin: 32px auto 40px;
+    padding: 0 16px;
+}
+@media screen and (max-width: 1024px) {
+    .gzBRfu {
+        padding: 0 40px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .gzBRfu {
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    .cjjvyo {
+        background-color: rgb(238, 238, 238);
+    }
+}
+.ecJnUi {
+    margin-top: 28px;
+    padding-bottom: 28px;
+    transition: all 1s ease-in-out 0s;
+}
+.ecJnUi:first-child {
+    margin-top: 0;
+}
+@media screen and (max-width: 600px) {
+    .ecJnUi {
+        margin-top: 8px;
+        padding-bottom: 8px;
+    }
+    .ecJnUi:first-child {
+        margin-top: 0;
+    }
+    .ecJnUi:last-child {
+        padding-bottom: 16px;
+    }
+}
+.kJqIhS {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1px;
+    padding-top: 1px;
+}
+@media screen and (max-width: 600px) {
+    .kJqIhS {
+        padding-top: 0;
+    }
+}
+.fksWrf {
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 16px;
+    color: rgb(51, 51, 51);
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
+}
+@media screen and (max-width: 600px) {
+    .fksWrf {
+        padding: 12px 12px 12px 24px;
+        position: sticky;
+        top: 120px;
+        border-bottom: 1px solid rgb(238, 238, 238);
+        z-index: 1;
+    }
+}
+.hnqIx {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: -0.3px;
+    font-weight: 600;
+}
+.dRjzRU {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: -0.3px;
+    font-weight: normal;
+}
+.dEdVAy {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.fmHiTT {
+    width: 24px;
+    height: 24px;
+}
+.kTtIQX {
+    color: rgb(51, 51, 51);
+    max-width: calc(100vw - 130px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 16px;
+    margin-left: 12px;
+}
+@media screen and (min-width: 600px) {
+    .kTtIQX {
+        max-width: 180px;
+    }
+}
+.liBlbn {
+    text-align: right;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.liBlbn .penalti {
+    margin-left: 18px;
+}
+.liBlbn .icone-vencedor {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: -24px;
+    margin-left: 18px;
+}
+.gEOnZC {
+    visibility: hidden;
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+    text-align: right;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.33;
+    letter-spacing: -0.2px;
+    border-radius: 2px;
+    padding: 5px 8px 7px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
+    margin-top: -55px;
+}
+.gEOnZC::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -7px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: rgb(51, 51, 51) transparent transparent;
+}
+.jvogzF {
+    width: 290px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(238, 238, 238);
+    color: rgb(51, 51, 51);
+    padding: 16px 24px;
+    margin-left: -1px;
+    margin-top: -1px;
+    margin-bottom: 0;
+    text-decoration: none;
+    display: block;
+}
+@media screen and (max-width: 600px) {
+    .jvogzF {
+        width: 100%;
+        max-width: 100%;
+        border-right: 0;
+        border-left: 0;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+    .jvogzF:first-child {
+        border-top: 0;
+    }
+}
+@media screen and (min-width: 600px) {
+    .jvogzF:hover .Matchstyle__Tooltip-opmzko-0 {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+.USXGP {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    color: rgb(85, 85, 85);
+    font-size: 12px;
+    line-height: 1.33;
+}
+.jCIdtH {
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: rgb(85, 85, 85);
+    display: block;
+    margin-top: 15px;
+}
+#root-agenda-esportiva {
+    min-height: 80vh;
+}

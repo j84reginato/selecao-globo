@@ -1,0 +1,50 @@
+openapi: 3.0.0
+info:
+  title: SelecaoGlobo
+  description: 'Aplicação do tipo BFF (backend for frontend) responsável por prover dados para que seus clientes possam montar uma página de calendário de jogos do ano de 2019.'
+  version: '0.1'
+paths:
+  '/api/desktop/v1/soccer-matches/{date}':
+    get:
+      tags:
+        - 'Jogos do dia - Desktop'
+      summary: 'Consultar jogos'
+      description: 'Permite consultar os jogos de futebol em determinada data.'
+      parameters:
+        -
+          name: date
+          in: path
+          description: 'Data no formato YYYY-mm-dd'
+          required: true
+          schema:
+            type: string
+            format: ''
+      responses:
+        '200':
+          description: 'Operação realizada com sucesso'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas.yaml#/components/schemas/MatchesReadResponse'
+        '422':
+          description: 'Argumento inválido'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas.yaml#/components/schemas/ErrorResponse'
+        '404':
+          description: 'Entidade não localizada'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas.yaml#/components/schemas/ErrorResponse'
+        '400':
+          description: 'Erro interno'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas.yaml#/components/schemas/ErrorResponse'
+tags:
+  -
+    name: 'Jogos do dia - Desktop'
+    description: 'Métodos para tratamento dos jogos do dia.'

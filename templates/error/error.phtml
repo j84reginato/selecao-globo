@@ -1,0 +1,25 @@
+<?php
+$status = isset($status) ? $this->e($status) : 400;
+$reason = isset($reason) ? $this->e($reason) : '';
+
+$response = [
+    "success" => false,
+    "message" => "Oops! This is awkward. We encountered a {$status} {$reason} error.",
+];
+
+if (getenv('APPLICATION_ENV') === 'dev') {
+    $response = array_merge($response, [
+        "description" => isset($error) ? $this->e($error->getMessage()) : null,
+        "code"        => isset($error) ? $this->e($error->getCode()) : null,
+        "file"        => isset($error) ? $this->e($error->getFile()) : null,
+        "line"        => isset($error) ? $this->e($error->getLine()) : null,
+    ]);
+}
+
+header('Content-Type: application/json');
+
+try {
+    echo json_encode($response, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
+} catch (JsonException $e) {
+    echo $e->getCode() . ':' . $e->getMessage();
+}

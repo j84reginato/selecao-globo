@@ -1,0 +1,217 @@
+<?php $this->layout('layout::default', ['title' => 'Padrão de Commit']) ?>
+
+<a href="#top" class="text-muted back-to-top"><em class="fa fa-toggle-up"></em>&nbsp;Back to top</a>
+<div class="content">
+    <div itemtype="http://schema.org/SoftwareSourceCode">
+        <main>
+            <div class="px-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <?= $this->insert('app::nav') ?>
+                        <div class="repository-content content">
+                            <div class="Box Box--condensed">
+                                <div class="Box-body p-5">
+                                    <article class="markdown-body container-lg" itemprop="text">
+                                        <h1>
+                                            <a id="padroes-de-commit" class="anchor" aria-hidden="true" href="#padroes-de-commit">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Padrão de Commit
+                                        </h1>
+                                        <p>O padrão de <em>commit</em> apresentado a seguir foi baseado no padrão bastante conhecido e usado pelo <a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit" target="_blank">Angular</a>, <a href="http://karma-runner.github.io/1.0/dev/git-commit-msg.html" target="_blank">Karma</a> e outros:</p>
+                                        <p>Estrutura:</p>
+                                        <?= $this->insert('app::commit-structure') ?>
+                                        <p>Exemplo:</p>
+                                        <?= $this->insert('app::commit-example') ?>
+                                        <p>A ideia de usar esse padrão, é termos de forma granulada o que cada <em>commit</em> fez e em o quê. Além disso, facilita na hora de extrair algum <em>changelog</em> da aplicação e além de melhorar a visualização do <em>log</em> sem <em>commits</em> vagos.</p>
+                                        <p>Utilizamos seis regras e elas são as seguintes:</p>
+                                        <ul>
+                                            <li>Os <em>commits</em> devem ser <a href="https://en.wikipedia.org/wiki/Atomic_commit#Atomic_commit_convention" target="_blank">atômicos</a>; se duas implementações/correções distintas são realizadas, elas devem ser implementadas em dois <em>commits</em> diferentes;</li>
+                                            <li>O tipo do cabeçalho é obrigatório e o escopo do cabeçalho é opcional;</li>
+                                            <li>Cada linha do <em>commit</em> terá no máximo 100 caracteres;</li>
+                                            <li>A compreensão do conteúdo do <em>commit</em> deve ser quase que automática para qualquer contribuidor e de fácil compreensão para novos contribuidores;</li>
+                                            <li>A mensagens de rodapé, quando presente, deve fazer referência ao número da tarefa no <strong>Jira</strong> associada ao <em>commit</em>;</li>
+                                            <li>Os tipos, escopos, descrições, conteúdo do corpo e rodapé devem ser devidamente declarados.</li>
+                                        </ul>
+                                        <p>Para uma melhor compreensão da importância de um <em>commit</em> descritivo e alguns exemplos, leia:</p>
+                                        <ul>
+                                            <li><a href="https://chris.beams.io/posts/git-commit/" target="_blank">chris beams</a> e</li>
+                                            <li><a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html" target="_blank">tbaggery</a>.</li>
+                                        </ul>
+                                        <h2>
+                                            <a id="tipo" class="anchor" aria-hidden="true" href="#tipo">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Tipo
+                                        </h2>
+                                        <p>Os <strong>Tipos</strong> se resumem em <strong><em>feat</em></strong>, <strong><em>fix</em></strong>, <strong><em>refactor</em></strong>, <strong><em>style</em></strong>, <strong><em>chore</em></strong>, <strong>env</strong>, <strong><em>doc</em></strong>, <strong><em>test</em></strong> e <strong><em>revert</em></strong></p>
+                                        <h3>
+                                            <a id="feat" class="anchor" aria-hidden="true" href="#feat">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            feat
+                                        </h3>
+                                        <p><code>feat</code> são quaisquer adições ao código.</p>
+                                        <p>Enquanto elas podem alterar parte do código já existente, o foco dela é a implementação de <em>features</em> novas ao ecossistema ou incrementos em <em>features</em> existentes.</p> <p>Exemplos:</p>
+                                        <p><code>feat(login): create login page</code></p>
+                                        <p><code>feat(routes): add click functions on map markers</code></p>
+                                        <h3>
+                                            <a id="fix" class="anchor" aria-hidden="true" href="#fix">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            fix
+                                        </h3>
+                                        <p><code>fix</code> refere-se às correções de <em>bugs</em>.</p>
+                                        <p>Exemplos:</p>
+                                        <p><code>fix(login): add description=&quot;email&quot; to login form</code></p>
+                                        <p><code>fix(dashboard): fix decimal point error</code></p>
+                                        <h3>
+                                            <a id="refactor" class="anchor" aria-hidden="true" href="#refactor">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            refactor
+                                        </h3>
+                                        <p><code>refactor</code> refere-se a quaisquer mudanças que atinjam o código, porém não alterem sua funcionalidade.</p>
+                                        <p>Alterou o formato de como é o processamento em determinada parte da sua tela, mas manteve a mesma funcionalidade? Declare como <em>refactor</em>.</p> <p>Exemplos:</p>
+                                        <p><code>refactor(style): use sass mixins to handle darken backgrounds</code></p>
+                                        <p><code>refactor(login): use arrow function on Array.map</code></p>
+                                        <h3>
+                                            <a id="style" class="anchor" aria-hidden="true" href="#style">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            style
+                                        </h3>
+                                        <p>Alterações referentes a formatações de código, <em>semicolons</em>, <em>trailing spaces</em> e <em>lint</em> em geral são em <code>style</code>.</p>
+                                        <h3>
+                                            <a id="chore" class="anchor" aria-hidden="true" href="#chore">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            chore
+                                        </h3>
+                                        <p><code>chore</code> será utilizado para qualquer alteração de arquitetura. Seja alteração do composer.json ou algum arquivo de configuração, ou mesmo alteração da organização de pastas/código do projeto.</p>
+                                        <p>Exemplos:</p> <p><code>chore: add run/env script</code></p>
+                                        <p><code>chore: organize components by features</code></p>
+                                        <h3>
+                                            <a id="env" class="anchor" aria-hidden="true" href="#env">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            env
+                                        </h3>
+                                        <p><code>env</code> será utilizado para as funções como atualizações de arquivos <code>.env</code>, <code>docker</code>, <code>CI</code>, <code>build files</code>, <code>tasks runners</code> ou configurações, por exemplo:</p>
+                                        <p>Exemplos:</p>
+                                        <p><code>env(docker): add a node script to DockerFile</code></p>
+                                        <p>Obs: vale notar que esse é um tipo personalizado e foge das especificações do <strong><em>conventional commit</em></strong>.</p>
+                                        <h3>
+                                            <a id="doc" class="anchor" aria-hidden="true" href="#doc">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            doc
+                                        </h3>
+                                        <p>Com <code>doc</code>, temos conteúdo relativo à documentação. Será usado ao adicionar comentários no código, phpdoc, jsdoc, storyboard e tudo que não interfira no código, porém indique o funcionamento do mesmo.</p>
+                                        <p>Exemplos:</p> <p><code>docs(login): add jsdoc to functions</code></p>
+                                        <p><code>docs(login): components from login inserted on storyboard</code></p>
+                                        <h3>
+                                            <a id="test" class="anchor" aria-hidden="true" href="#test">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            test
+                                        </h3>
+                                        <p><code>test</code> será usado ao realizar commits relacionados às modificações e adições aos testes unitários e/ou end-to-end.</p>
+                                        <p>Exemplos:</p> <p><code>test(login): add unit test</code></p>
+                                        <p><code>test(dashboard): add e2e test</code></p>
+                                        <h3>
+                                            <a id="revert" class="anchor" aria-hidden="true" href="#revert">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            revert
+                                        </h3>
+                                        <p>Se o <em>commit</em> reverter um <em>commit</em> anterior, ele deve começar com <code>revert</code>, seguido pelo cabeçalho do <em>commit</em> revertido. No corpo, deve-se dizer <code>this reverts commit &lt;hash&gt;</code>, onde o <em>hash</em> é o <strong>SHA</strong> do <em>commit</em> que está sendo revertido.</p>
+                                        <p>Exemplo:</p> <p><code>revert: this reverts commit 74a9ef</code></p>
+                                        <h2>
+                                            <a id="escopo" class="anchor" aria-hidden="true" href="#escopo">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Escopo
+                                        </h2>
+                                        <p>Escopos podem ser quaisquer partes do projeto; é importante que eles sejam compreendidos de uma maneira quase automática para alguém que não conhece o projeto. Em geral, a utilização do escopo é bem genérica, especificando apenas o primeiro contexto (login, middleware, profile). No entanto, prefira ser mais específico e defina um segundo escopo (containers/login, por exemplo).</p>
+                                        <p>Supondo que você tenha feito uma refatoração nas rotas relativas as <em>settings</em> do projeto, uma possibilidade de <em>commit</em> seria:</p>
+                                        <p><code>feat(routes/settings): adjust settings to be called in any screen</code></p>
+                                        <h2>
+                                            <a id="descricao" class="anchor" aria-hidden="true" href="#descricao">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Descrição
+                                        </h2>
+                                        <p>As descrições devem ser suficientemente claras, utilizando seu espaço até o máximo permitido da linha. Caso você veja que a explicação não foi suficiente, sinta-se à vontade para adicionar conteúdo ao corpo.</p>
+                                        <ul>
+                                            <li>Deve conter a descrição sucinta da alteração:</li>
+                                            <li>Use o imperativo: &quot;corrige&quot; e não &quot;corrigiu&quot;, &quot;corrigindo&quot; ou &quot;correção&quot;;</li>
+                                            <li>Inicie a frase com letra minúscula;</li>
+                                            <li>Sem ponto (.) no final.</li>
+                                        </ul>
+                                        <h2>
+                                            <a id="corpo" class="anchor" aria-hidden="true" href="#corpo">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Corpo
+                                        </h2>
+                                        <p>O corpo, por sua vez, deve conter descrições mais precisas do que está contido naquele <em>commit</em>, mostrando as razões ou consequências geradas por esse código, assim como instruções futuras.</p>
+                                        <p>Se existir uma mudança drástica que quebrará funcionalidades, você DEVE obrigatóriamente indicar no corpo com ‘BREAKING CHANGE’ (sim, em caixa alta) e explicar as razões que levaram a essa marcação.</p>
+                                        <p>Dica: Configure seu editor (<a href="http://stackoverflow.com/a/31844714" target="_blank">nano¹</a>, <a href="https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message" target="_blank">Vim²</a>) para quebrar a linha em 100 caracteres.</p>
+                                        <h2>
+                                            <a id="rodape" class="anchor" aria-hidden="true" href="#rodape">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Rodapé
+                                        </h2>
+                                        <p>O rodapé restringe-se às alterações de estado via <strong><em>smart commit</em></strong>, como resoluções de estado de <em>issues</em>. A idéia é que no futuro seja possível com <strong><em>smart commits</em></strong> associar o <em>commit</em> a uma <em>issue</em> do <em>Jira</em> e alterar seu estado automaticamente com keywords como <code>resolve</code>, <code>fix</code>, <code>solves</code>.</p>
+                                        <p>Exemplo: ‘resolves issue #WBUY-99’.</p>
+                                        <h2>
+                                            <a id="observacoes" class="anchor" aria-hidden="true" href="#observacoes">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Observações
+                                        </h2>
+                                        <p>Este campo deve ser usado para fazer referência a outras <em>issues</em> / <em>tasks</em> / <em>histories</em>, débito técnico e demais links relevantes.</p>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

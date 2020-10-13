@@ -1,0 +1,84 @@
+<?php $this->layout('layout::default', ['title' => 'Documentação']) ?>
+
+<?php $this->push('stylesheets') ?>
+<link rel="stylesheet" type="text/css" href="/swagger/swagger-ui.css" >
+<link type="text/css" rel="stylesheet" href="/assets/pages/documentation-swagger.css">
+<?php $this->end() ?>
+
+<a href="#top" class="text-muted back-to-top"><em class="fa fa-toggle-up"></em>&nbsp;Back to top</a>
+<div class="content">
+    <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode">
+        <main>
+            <div class="px-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <?= $this->insert('app::nav') ?>
+                        <div class="repository-content content">
+                            <div class="Box Box--condensed">
+                                <div class="Box-body p-5">
+                                    <article class="markdown-body container-lg" itemprop="text">
+                                        <h1>
+                                            <a id="selecao-globo" class="anchor" aria-hidden="true" href="#selecao-globo">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Seleção Globo: Coding Challenge
+                                        </h1>
+                                        <p>Aplicação do tipo BFF (backend for frontend) responsável por prover dados para que seus clientes possam montar uma página de calendário de jogos do ano de 2019. Essa aplicação foi desenvolvida com o objetivo de contemplar uma etapa do <strong>Processo Seletivo </strong>para <strong>Analista Desenvolvimento Backend</strong> da empresa <strong>Globo</strong>.</p>
+                                        <p>Trata-se de uma <strong>API</strong> (<em>Application Programming Interface</em>) escrita em <strong>PHP</strong>, usando as especificações <strong>PSR-7</strong> (Mensagens HTTP) e <strong>PSR-15</strong> (Manipuladores de Solicitação HTTP) e estruturado sobre o microframework <a href="https://docs.mezzio.dev/" target="_blank" rel="nofollow">Mezzio</a>.</p>
+                                        <p>A API segue o padrão <strong>Restful</strong>, tendo como métodos de ação os verbos HTTP.</p>
+                                        <p>A negociação de conteúdo é feita por meio de <strong>JSON</strong>. Quando há a necessidade de enviar um arquivo, é necessário que o arquivo seja enviado de forma codificada em <strong>base64</strong>, para que seja recebido de forma correta.</p>
+                                        <p>As requisições são atômicas, não há estado inconsistente se for retornado <code>200</code>, <code>201</code> e <code>204</code>. Os <strong><em>status description</em></strong> de erro e sucesso seguem o padrão da <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank"><code>RFC2616</code></a>.</p>
+                                        <p>Os mais utilizados serão:</p>
+                                        <p><strong>Sucesso:</strong></p>
+                                        <ul>
+                                            <li><p><strong>200</strong> <strong>[OK]</strong> - Utilizado nos métodos de listagem e busca.</p></li>
+                                            <li><p><strong>201</strong> <strong>[Created]</strong> - Quando um recurso for criado com sucesso. Será retornado um id e mais algumas informações sobre a entidade criada.</p></li>
+                                            <li><p><strong>202</strong> <strong>[Accepted]</strong> - Quando uma requisição for aceita, mas o processamento será feito em segundo plano. Será retornado informações sobre o recurso.</p></li>
+                                            <li><p><strong>204</strong> <strong>[No Content]</strong> - Atualização ou exclusão realizada com sucesso. Nada será retornado no corpo da requisição.</p></li>
+                                        </ul>
+                                        <p><strong>Erro:</strong></p>
+                                        <ul>
+                                            <li><p><strong>400</strong> <strong>[Bad Request]</strong> - Verificar se JSON está em um formato válido.</p></li>
+                                            <li><p><strong>401</strong> <strong>[Unauthorized]</strong> - Verificar as credenciais de autenticação.</p></li>
+                                            <li><p><strong>404</strong> <strong>[Not Found]</strong> - Entidade não encontrada.</p></li>
+                                            <li><p><strong>405</strong> <strong>[Method Not Allowed]</strong> - O recurso solicitado não permite esse método.</p></li>
+                                            <li><p><strong>409</strong> <strong>[Conflict]</strong> - Quando já tiver sido inserido um registro e for requisitado novamente a sua inserção (Duplicidade).</p></li>
+                                            <li><p><strong>422</strong> <strong>[Unprocessable Entity (WebDAV)]</strong> - A validação retornou algum erro.</p></li>
+                                            <li><p><strong>429</strong> <strong>[Too Many Requests]</strong> - Foi excedido o limite de requisição (Essa restrição não está habilitada nesse momento).</p></li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </div>
+                            <br>
+                            <div id="swagger-ui" class="Box Box--condensed"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<?php $this->push('javascript') ?>
+<script src="/swagger/swagger-ui-bundle.js"></script>
+<script src="/swagger/swagger-ui-standalone-preset.js"></script>
+<script>
+    window.onload = function() {
+        window.ui = SwaggerUIBundle({
+            url: "/swagger/openapi.yaml",
+            dom_id: '#swagger-ui',
+            deepLinking: true,
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset.slice(1)
+            ],
+            plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl
+            ],
+            layout: "StandaloneLayout"
+        })
+    }
+</script>
+<?php $this->end() ?>

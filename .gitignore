@@ -1,0 +1,39 @@
+.idea/
+.vscode/
+*~
+._*
+.~lock.*
+*.bkp
+*.log
+.buildpath
+.DS_Store
+.project
+.settings
+.environment
+.env
+
+# Caches
+cache/app_config_cache.php
+cache/fastroute.php.cache
+.phpunit.result.cache
+
+# HTML Coverage testes
+public/coverage/*
+
+# Coverage results and execution report
+!/target/unit/report.xml
+!/target/integration/report.xml
+
+# Docker logs
+/docker/cron/logs/
+/docker/elk/logs/
+/docker/nginx/logs/
+/docker/php/logs/
+/docker/sonarqube/logs/
+/esportes-api/node_modules/
+
+# SonarQube files
+/.scannerwork/
+
+# Dependencies
+/vendor/

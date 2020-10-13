@@ -1,0 +1,16 @@
+config:
+  target: 'http://172.17.0.1:8181'
+  phases:
+    - duration: 1
+      arrivalRate: 1000
+  defaults:
+    headers:
+        Content-Type: 'application/json'
+#        Authorization: "{{ $processEnvironment.SERVICE_API_KEY }}"
+        Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb25hdGFuIE5vcm9uaGEgUmVnaW5hdG8iLCJleHAiOm51bGwsInN1YiI6IlNlbGVjYW9HbG9ibyIsImF1ZCI6Imdsb2JvLmNvbSIsImlhdCI6MTYwMTU5NTU4NH0.fOEYqku2p3iDuNyrqB_-xVkdrx3P8u_Kv96cAyR0YMI'
+scenarios:
+  -
+    name: 'matches of day'
+    flow:
+      - get:
+          url: '/api/desktop/v1/soccer-matches/2019-12-01'
