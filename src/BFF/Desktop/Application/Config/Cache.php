@@ -18,8 +18,11 @@ final class Cache
             'enabled'          => (bool)getenv('CACHE_ENABLED'),
             'client'           => [
                 'redis' => [
-                    'host' => getenv('REDIS_HOST'),
-                    'port' => getenv('REDIS_PORT'),
+                    'scheme'   => getenv('REDIS_SCHEME'),
+                    'host'     => getenv('REDIS_HOST'),
+                    'port'     => getenv('REDIS_PORT'),
+                    'username' => getenv('REDIS_USER') ?? '',
+                    'password' => getenv('REDIS_PASS'),
                 ],
             ],
             'matchesCacheKey'  => getenv('MATCHES_CACHE_KEY'),

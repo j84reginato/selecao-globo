@@ -21,8 +21,11 @@ final class CacheClientFactory
     public function __invoke(ContainerInterface $container): PredisClient
     {
         $client = new CacheClientFacade([
-            'host' => $container->get('config')['cache']['client']['redis']['host'],
-            'port' => $container->get('config')['cache']['client']['redis']['port'],
+            'scheme'   => $container->get('config')['cache']['client']['redis']['scheme'],
+            'host'     => $container->get('config')['cache']['client']['redis']['host'],
+            'port'     => $container->get('config')['cache']['client']['redis']['port'],
+            'username' => $container->get('config')['cache']['client']['redis']['username'],
+            'password' => $container->get('config')['cache']['client']['redis']['password'],
         ]);
 
         return $client->getCacheClient();

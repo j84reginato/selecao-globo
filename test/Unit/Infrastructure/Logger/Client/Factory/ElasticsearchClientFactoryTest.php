@@ -30,12 +30,7 @@ class ElasticsearchClientFactoryTest extends AbstractUnitTestCase
                 'logger' => [
                     'dataStore' => [
                         'elasticsearch' => [
-                            'host'               => 'mock',
-                            'port'               => 'mock',
-                            'transport'          => 'mock',
-                            'awsAccessKeyId'     => 'mock',
-                            'awsSecretAccessKey' => 'mock',
-                            'awsRegion'          => 'mock',
+                            'host' => 'mock',
                         ],
                     ],
                 ],

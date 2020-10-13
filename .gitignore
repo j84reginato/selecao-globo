@@ -12,6 +12,20 @@
 .environment
 .env
 
+# Symbolic Link Files
+/bin/generate-deps-for-config-factory
+/bin/generate-factory-for-class
+/bin/jp.php
+/bin/mezzio-tooling
+/bin/openapi
+/bin/php-cs-fixer
+/bin/php-parse
+/bin/phpcbf
+/bin/phpcs
+/bin/phpunit
+/bin/var-dump-server
+/bin/yaml-lint
+
 # Caches
 cache/app_config_cache.php
 cache/fastroute.php.cache

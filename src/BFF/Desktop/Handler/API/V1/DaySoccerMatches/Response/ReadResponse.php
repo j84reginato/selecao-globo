@@ -53,11 +53,11 @@ class ReadResponse extends AbstractResponse
         $matches = $this->matchesHydrator->hydrate($matches['resultados']['jogos'], $matches['referencias']);
         $matches = MatchView::serializeFromArray($matches);
 
-        $matchesByChampionchip = [];
+        $matchesByChampionship = [];
         foreach ($matches as $match) {
-            $matchesByChampionchip[$match["campeonato"]][] = $match;
+            $matchesByChampionship[$match["campeonato"]][] = $match;
         }
 
-        return $matchesByChampionchip;
+        return $matchesByChampionship;
     }
 }

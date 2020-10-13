@@ -17,13 +17,8 @@ final class Logger
         return [
             'dataStore' => [
                 'elasticsearch' => [
-                    'host'               => getenv('ELK_HOST'),
-                    'port'               => getenv('ELK_PORT') ?: null,
-                    'index'              => getenv('ELK_INDEX'),
-                    'transport'          => getenv('ELK_TRANSPORT') ?: null,
-                    'awsRegion'          => getenv('ELK_REGION'),
-                    'awsAccessKeyId'     => getenv('ELK_KEY'),
-                    'awsSecretAccessKey' => getenv('ELK_SECRET'),
+                    'host'  => getenv('ELK_HOST'),
+                    'index' => getenv('ELK_INDEX'),
                 ],
                 'console'       => [
                     'streamName' => 'console',

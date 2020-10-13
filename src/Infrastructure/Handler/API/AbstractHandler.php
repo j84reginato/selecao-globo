@@ -98,11 +98,11 @@ abstract class AbstractHandler
             'attributes' => [
                 'request-id' => $serverRequest->getAttribute('request-id'),
                 'token'      => [
-                    'iss' => $serverRequest->getAttribute('token')['iss'],
-                    'exp' => $serverRequest->getAttribute('token')['exp'],
-                    'sub' => $serverRequest->getAttribute('token')['sub'],
-                    'aud' => $serverRequest->getAttribute('token')['aud'],
-                    'iat' => $serverRequest->getAttribute('token')['iat'],
+                    'iss' => $serverRequest->getAttribute('token')['iss'] ?? null,
+                    'exp' => $serverRequest->getAttribute('token')['exp'] ?? null,
+                    'sub' => $serverRequest->getAttribute('token')['sub'] ?? null,
+                    'aud' => $serverRequest->getAttribute('token')['aud'] ?? null,
+                    'iat' => $serverRequest->getAttribute('token')['iat'] ?? null,
                 ],
             ],
             'request'    => [

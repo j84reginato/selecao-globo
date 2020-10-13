@@ -28,26 +28,13 @@ final class ElasticsearchClientFacade
     public function __construct(array $config)
     {
         $hosts = [
-            [
-                'host'   => $config['host'],
-                'port'   => $config['port'],
-                'scheme' => strtolower($config['transport']),
-            ],
+            $config['host']
         ];
 
-        $builder = ClientBuilder::create()
+        $client = ClientBuilder::create()
             ->setHosts($hosts)
-            ->setRetries(3);
-
-        if (getenv('APPLICATION_ENV') === 'production') {
-            $provider = CredentialProvider::fromCredentials(
-                new Credentials($config['awsAccessKeyId'], $config['awsSecretAccessKey'])
-            );
-            $handler  = new ElasticsearchPhpHandler($config['awsRegion'], $provider);
-            $builder->setHandler($handler);
-        }
-
-        $client = $builder->build();
+            ->setRetries(3)
+            ->build();
 
         $this->elasticsearchClient = $client;
     }
