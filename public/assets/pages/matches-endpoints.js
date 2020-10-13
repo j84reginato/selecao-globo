@@ -1,6 +1,6 @@
 const matchesEndpoints = {
 
-    GET_MATCHES: 'http://localhost:8181/api/desktop/v1/soccer-matches/:date',
+    GET_MATCHES: 'https://selecao-globo.herokuapp.com/api/desktop/v1/soccer-matches/:date',
 
     readMatches: function (date) {
         return new Promise(function (resolve, reject) {
