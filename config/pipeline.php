@@ -41,9 +41,7 @@ return static function (Application $app, MiddlewareFactory $factory, ContainerI
      */
 
     // Jwt Authentication Middleware
-    if (getenv('APPLICATION_ENV') === 'production') {
-        $app->pipe($container->get(SelecaoGlobo\Infrastructure\JwtAuthentication\JwtAuthenticationFacade::class));
-    }
+    $app->pipe($container->get(SelecaoGlobo\Infrastructure\JwtAuthentication\JwtAuthenticationFacade::class));
 
     // Request Id Middleware
     $app->pipe($container->get(SelecaoGlobo\Infrastructure\RequestId\RequestIdMiddlewareFacade::class));
