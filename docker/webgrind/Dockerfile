@@ -1,1 +1,0 @@
-FROM jokkedk/webgrind:latest
