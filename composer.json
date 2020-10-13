@@ -42,7 +42,6 @@
   "require": {
     "php": "^7.4",
     "ext-json": "*",
-    "ext-newrelic": "*",
     "ext-simplexml": "*",
     "ext-tokenizer": "*",
     "ext-xmlwriter": "*",
