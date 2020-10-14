@@ -30,7 +30,7 @@
                                             </a>
                                             A escolha da linguagem:
                                         </h2>
-                                        <p>Como já informado em nossa conversa inicial no dia 22 de setembro, <strong>PHP</strong> é a linguagem de programação com que tenho maior vivência profissional e domínio. Apesar do desejo de me desafiar e desenvolver este projeto em __Golang__, uma linguagem que tenho tido bastante interesse (e estudado muito), nos últimos tempos, acabei optando por utilizar o PHP, pois acredito que assimn posso demonstrar mais detalhadamente as minhas habilidades desenvolvendo um código limpo, eficiente, escalável e performático.</p>
+                                        <p>Como já informado em nossa conversa inicial no dia 22 de setembro, <strong>PHP</strong> é a linguagem de programação com que tenho maior vivência profissional e domínio. Apesar do desejo de me desafiar e desenvolver este projeto em <strong>Golang</strong>, uma linguagem que tenho tido bastante interesse (e estudado muito), nos últimos tempos, acabei optando por utilizar o PHP, pois acredito que assim posso demonstrar mais detalhadamente as minhas habilidades desenvolvendo um código limpo, eficiente, escalável e performático.</p>
                                         <p>O PHP evolui muito nos últimos anos deixando de ser apenas uma linguagem de <em>script</em> e hoje conta com recursos poderosos que o colocam no mesmo nível das linguagens mais modernas. A última grande versão do PHP foi 7. Esta versão foi um marco importante com desempenho significativamente aprimorado e menor uso de memória, além disso, com o uso de ferramentas como o Swoole ele agora conta com os recursos de programação assíncrona orientada a eventos. A versão utilizada para desenvolver o código neste desafio foi a 7.4.</p>
                                         <h2>
                                             <a id="o-uso-de-um-framework" class="anchor" aria-hidden="true" href="#o-uso-de-um-framework">
@@ -40,7 +40,7 @@
                                             </a>
                                             O uso de um framework:
                                         </h2>
-                                        <p>Decidi estruturar o projeto sobre um <em>microframework</em> de forma a agilizar algumas tarefas comuns, sem contudo, engessar o processo de desenvolvimento. Para isso, o escolhido foi o <a href="https://docs.mezzio.dev/" target="_blank" rel="noopener noreferrer">Mezzio</a>, um _microframework_ com suporte a <em>HTTP messages</em> e <em>Midldlewares</em>.</p>
+                                        <p>Decidi estruturar o projeto sobre um <em>microframework</em> de forma a agilizar algumas tarefas comuns, sem contudo, engessar o processo de desenvolvimento. Para isso, o escolhido foi o <a href="https://docs.mezzio.dev/" target="_blank" rel="noopener noreferrer">Mezzio</a>, um <em>microframework</em> com suporte a <strong><em>HTTP messages</em></strong> e <strong><em>Midldlewares</em></strong>.</p>
                                         <h2>
                                             <a id="demais-dependencias" class="anchor" aria-hidden="true" href="#demais-dependencias">
                                                 <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
@@ -79,19 +79,60 @@
                                         </h3>
                                         <p>Caso o container do <strong>SonarQube</strong> seja instanciado a consulta poderá ser realizada em: <a href="http://localhost:99" target="_blank">http://localhost:99</a>
                                         <p><img align="middle" style="margin: 20px 0" src="https://imgur.com/xdBusoc.png" /></p>
-                                        <pre>
-                                            <span class="code-text">login = admin</span>
-                                            <span class="code-text">senha = admin</span>
-                                        </pre>
+<pre>
+<span class="code-text">login = admin</span>
+<span class="code-text">senha = admin</span>
+</pre>
                                         <p>As configurações estão no arquivo <pre><span class="code-text">sonar-project.properties</span></pre></p>
-                                        <p>No <em>docker container</em> do serviço PHP eu instalei o <pre><span class="code-text">sonar-scanner</span></pre>. Portanto, é possivel rodar seus comando diretamente de dentro do container.</p>
-                                        <pre>
-                                            <span class="code-text">$ sudo docker-compose exec php sh</span>
-                                        </pre>
+                                        <p>No <em>docker container</em> do serviço PHP eu instalei o <strong>sonar-scanner</strong>. Portanto, é possível rodar seus comando diretamente de dentro do container.</p>
+<pre>
+<span class="code-text">$ sudo docker-compose exec php sh</span>
+</pre>
                                         <p>e em seguida:</p>
-                                        <pre>
-                                            <span class="code-text">$ sonar-scanner -Dsonar.login=YOUR-GENERATED-KEY</span>
-                                        </pre>
+<pre>
+<span class="code-text">$ sonar-scanner -Dsonar.login=YOUR-GENERATED-KEY</span>
+</pre>
+                                        <h2>
+                                            <a id="autenticação" class="anchor" aria-hidden="true" href="#autenticação">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Autenticação
+                                        </h2>
+                                        <p>Para acesso à api implementei uma autenticação JWT, sendo necessário um token gerado com a seguintes assinaturas:.</p>
+<pre>
+<span class="code-text">ambiente dev: ehy8oowoq7nogzjajaaf788l4kwm7wbg2kw9y6s6</span>
+<span class="code-text">ambiente prd: bn80gp4od5e7y8zw7o72pdz52fugdlg0zn6wm83l</span>
+<span class="code-text">ambiente stg: dyjff4ykc77uoj6h60p9qmv8avuog994t0lhygw0</span>
+<span class="code-text">ambiente test: 5plcss2eg64cpgdu4gf91cvn1q0z12nmj7tm98vj</span>
+</pre>
+                                        <p>JWT Bearer Token previamente gerado:</p>
+<pre>
+<span class="code-text">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb25hdGFuIE5vcm9uaGEgUmVnaW5hdG8iLCJleHAiOm51bGwsInN1YiI6IlNlbGVjYW9HbG9ibyIsImF1ZCI6Imdsb2JvLmNvbSIsImlhdCI6MTYwMTU5NTU4NH0.fOEYqku2p3iDuNyrqB_-xVkdrx3P8u_Kv96cAyR0YMI</span>
+</pre>
+                                        <h2>
+                                            <a id="testes" class="anchor" aria-hidden="true" href="#testes">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Testes de Carga
+                                        </h2>
+                                        <p>Para executar o teste de carga utilizei a ferramenta <a href="https://artillery.io/" target="_blank">Artillery</a>. Conforme sugerido, o teste foi executado de forma a simular a garantia de que a API está pronta pra receber uma carga de 1000 requests/seg como baseline de performance.</p>
+                                        <p><img align="middle" style="margin: 20px 0" src="https://imgur.com/pfzZQlc.png" /></p>
+                                        <h2>
+                                            <a id="monitoramento-de-erros" class="anchor" aria-hidden="true" href="#monitoramento-de-erros">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Monitoramento de erros
+                                        </h2>
+                                        <p>Ao se desenvolver uma aplicação esperasse que ela esteja 100% livre de erros. Contudo, imprevistos e situações inesperadas acontecem. Para monitorar estes eventuais erros foi adicionado à aplicação um <em>listener</em> de erros bastante conhecido no mercado, o <a href="https://app.bugsnag.com" target="_blank">Bugsnag</a>.</p>
+                                        <p><img align="middle" style="margin: 20px 0" src="https://imgur.com/1RmvQ6T.png" /></p>
+                                        <h4>Qualquer dúvida e/ou solicitação estarei ao inteiro dispor!</h4>
+                                        <h3><em>"O homem que trabalha somente pelo que recebe, não merece ser pago pelo que faz" - Abraham Lincoln</em></h3>
                                     </article>
                                 </div>
                             </div>
