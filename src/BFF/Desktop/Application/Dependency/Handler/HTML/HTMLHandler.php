@@ -19,6 +19,7 @@ final class HTMLHandler
         return [
             'factories' => [
                 HTML\HomePageHandler::class        => HTML\Factory\HomePageHandlerFactory::class,
+                HTML\CommentsHandler::class        => HTML\Factory\HtmlHandlerFactory::class,
                 HTML\ResourcesHandler::class       => HTML\Factory\HtmlHandlerFactory::class,
                 HTML\SetupHandler::class           => HTML\Factory\HtmlHandlerFactory::class,
                 HTML\CommitStandardsHandler::class => HTML\Factory\HtmlHandlerFactory::class,
