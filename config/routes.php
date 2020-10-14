@@ -20,6 +20,7 @@ return static function (Application $app) {
 
     /** HTML */
     $app->get('/', HTML\HomePageHandler::class, 'home');
+    $app->get('/comments', HTML\CommentsHandler::class, 'comments');
     $app->get('/resources', HTML\ResourcesHandler::class, 'resources');
     $app->get('/setup', HTML\SetupHandler::class, 'setup');
     $app->get('/commit-standards', HTML\CommitStandardsHandler::class, 'commit.standards');

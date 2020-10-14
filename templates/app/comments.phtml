@@ -1,0 +1,104 @@
+<?php $this->layout('layout::default', ['title' => 'Comentários']) ?>
+
+<a href="#top" class="text-muted back-to-top"><em class="fa fa-toggle-up"></em>&nbsp;Back to top</a>
+<div class="content">
+    <div itemtype="http://schema.org/SoftwareSourceCode">
+        <main>
+            <div class="px-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <?= $this->insert('app::nav') ?>
+                        <div class="repository-content content">
+                            <div class="Box Box--condensed">
+                                <div class="Box-body p-5">
+                                    <article class="markdown-body container-lg" itemprop="text">
+                                        <h1>
+                                            <a id="selecao-globo" class="anchor" aria-hidden="true" href="#selecao-globo">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Comentários
+                                        </h1>
+                                        <p>Aplicação do tipo BFF (backend for frontend) responsável por prover dados para que seus clientes possam montar uma página de calendário de jogos do ano de 2019. Essa aplicação foi desenvolvida com o objetivo de contemplar uma etapa do <strong>Processo Seletivo </strong>para <strong>Analista Desenvolvimento Backend</strong> da empresa <strong>Globo</strong>.</p>
+                                        <p>Trata-se de uma <strong>API</strong> (<em>Application Programming Interface</em>) escrita em <strong>PHP</strong>, usando as especificações <strong>PSR-7</strong> (Mensagens HTTP) e <strong>PSR-15</strong> (Manipuladores de Solicitação HTTP) e estruturado sobre o microframework <a href="https://docs.mezzio.dev/" target="_blank" rel="nofollow">Mezzio</a>.</p>
+                                        <h2>
+                                            <a id="a-escolha-da-linguagem" class="anchor" aria-hidden="true" href="#a-escolha-da-linguagem">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            A escolha da linguagem:
+                                        </h2>
+                                        <p>Como já informado em nossa conversa inicial no dia 22 de setembro, <strong>PHP</strong> é a linguagem de programação com que tenho maior vivência profissional e domínio. Apesar do desejo de me desafiar e desenvolver este projeto em __Golang__, uma linguagem que tenho tido bastante interesse (e estudado muito), nos últimos tempos, acabei optando por utilizar o PHP, pois acredito que assimn posso demonstrar mais detalhadamente as minhas habilidades desenvolvendo um código limpo, eficiente, escalável e performático.</p>
+                                        <p>O PHP evolui muito nos últimos anos deixando de ser apenas uma linguagem de <em>script</em> e hoje conta com recursos poderosos que o colocam no mesmo nível das linguagens mais modernas. A última grande versão do PHP foi 7. Esta versão foi um marco importante com desempenho significativamente aprimorado e menor uso de memória, além disso, com o uso de ferramentas como o Swoole ele agora conta com os recursos de programação assíncrona orientada a eventos. A versão utilizada para desenvolver o código neste desafio foi a 7.4.</p>
+                                        <h2>
+                                            <a id="o-uso-de-um-framework" class="anchor" aria-hidden="true" href="#o-uso-de-um-framework">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            O uso de um framework:
+                                        </h2>
+                                        <p>Decidi estruturar o projeto sobre um <em>microframework</em> de forma a agilizar algumas tarefas comuns, sem contudo, engessar o processo de desenvolvimento. Para isso, o escolhido foi o <a href="https://docs.mezzio.dev/" target="_blank" rel="noopener noreferrer">Mezzio</a>, um _microframework_ com suporte a <em>HTTP messages</em> e <em>Midldlewares</em>.</p>
+                                        <h2>
+                                            <a id="demais-dependencias" class="anchor" aria-hidden="true" href="#demais-dependencias">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Demais dependências:
+                                        </h2>
+                                        <p>Com o objetivo de tornar o processo de avaliação mais rápido resolvi por <em>versionar</em> a pasta vendor (a pasta de dependências do PHP, equivalente à node_modules do npm). Assim não será necessário rodar os comandos do composer após baixar o código fonte. Decidi por essa abordagem levando em conta que os containers já demoram certo tempo para <em>"subir"</em>, poupa-se assim alguns minutos para deixar o ambiente pronto!
+                                        </p>
+                                        <h2>
+                                            <a id="setup-do-ambiente-de-desenvolvimento" class="anchor" aria-hidden="true" href="#setup-do-ambiente-de-desenvolvimento">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            Configuração do ambiente de desenvolvimento
+                                        </h2>
+                                        <p>Consulte o <a href="/setup">link</a> para obter detalhes.</p>
+                                        <h3>
+                                            <a id="elk-stack" class="anchor" aria-hidden="true" href="#elk-stack">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            ELK Stack:
+                                        </h3>
+                                        <p>Nesta aplicação estou utilizando a <em>ELK Stack</em> para armazenar e consultar os logs. A consulta pode ser realizada em: <a href="http://localhost:5601" target="_blank">http://localhost:5601</a> e selecionando o index: `logstash-globo`.</p>
+                                        <h3>
+                                            <a id="sonarqube" class="anchor" aria-hidden="true" href="#sonarqube">
+                                                <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+                                                </svg>
+                                            </a>
+                                            SonarQube:
+                                        </h3>
+                                        <p>Caso o container do <strong>SonarQube</strong> seja instanciado a consulta poderá ser realizada em: <a href="http://localhost:99" target="_blank">http://localhost:99</a>
+                                        <p><img align="middle" style="margin: 20px 0" src="https://imgur.com/xdBusoc.png" /></p>
+                                        <pre>
+                                            <span class="code-text">login = admin</span>
+                                            <span class="code-text">senha = admin</span>
+                                        </pre>
+                                        <p>As configurações estão no arquivo <pre><span class="code-text">sonar-project.properties</span></pre></p>
+                                        <p>No <em>docker container</em> do serviço PHP eu instalei o <pre><span class="code-text">sonar-scanner</span></pre>. Portanto, é possivel rodar seus comando diretamente de dentro do container.</p>
+                                        <pre>
+                                            <span class="code-text">$ sudo docker-compose exec php sh</span>
+                                        </pre>
+                                        <p>e em seguida:</p>
+                                        <pre>
+                                            <span class="code-text">$ sonar-scanner -Dsonar.login=YOUR-GENERATED-KEY</span>
+                                        </pre>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

@@ -165,10 +165,10 @@ class CacheManager extends CacheManagerDecorator implements CacheManagerInterfac
      *
      * @throws JsonException
      */
-    public function setRegister(string $key, $value, ?int $lifeTime = null): void
+    public function setRegister(string $key, $value, ?int $lifeTime = self::LIFE_TIME): void
     {
         if (getenv('CACHE_ENABLED')) {
-            $this->cacheClient->setex($key, self::LIFE_TIME, json_encode($value, JSON_THROW_ON_ERROR));
+            $this->cacheClient->setex($key, $lifeTime, json_encode($value, JSON_THROW_ON_ERROR));
         }
     }
 }
